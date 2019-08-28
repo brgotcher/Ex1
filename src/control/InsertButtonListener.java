@@ -1,10 +1,13 @@
 package control;
 
+import model.Coin;
 import view.MyWindow;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
 
 public class InsertButtonListener implements ActionListener {
 
@@ -32,5 +35,7 @@ public class InsertButtonListener implements ActionListener {
         if (value != 0) {
             display.setText("Coin " + value + " is selected");
         }
+
+        Main.piggyBank.insert(new Coin(value));
     }
 }

@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        testCode();
+        //testCode();
 
         MyWindow win = new MyWindow();
         win.init();
