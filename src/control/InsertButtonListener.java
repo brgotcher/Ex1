@@ -7,8 +7,6 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-
 public class InsertButtonListener implements ActionListener {
 
     private MyWindow win;
@@ -32,10 +30,15 @@ public class InsertButtonListener implements ActionListener {
             value = 25;
         }
 
-        if (value != 0) {
-            display.setText("Coin " + value + " is selected");
+        if (value == 0) {
+            return;
         }
 
         Main.piggyBank.insert(new Coin(value));
+
+        String m = display.getText();
+        String newMessage = String.format("%s\nCoin(%d) added, balance = %d coin count = %d",
+                m, value, Main.piggyBank.getBalance(), Main.piggyBank.getCoinCount());
+        display.setText(newMessage);
     }
 }
