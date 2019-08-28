@@ -9,6 +9,8 @@ import java.util.Random;
 
 public class Main {
 
+    static PiggyBank piggyBank;
+
     public static void main(String[] args) {
 
         testCode();
@@ -18,6 +20,8 @@ public class Main {
         win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         win.setVisible(true);
+
+        piggyBank = new PiggyBank();
 
     }
 
