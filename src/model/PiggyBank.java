@@ -23,4 +23,9 @@ public class PiggyBank {
     public int getCoinCount() {
         return coinCount;
     }
+
+    public void empty() {
+        balance = 0;
+        coinCount = 0;
+    }
 }

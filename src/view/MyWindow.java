@@ -1,6 +1,7 @@
 package view;
 
 import control.InsertButtonListener;
+import control.emptyButtonListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +11,7 @@ public class MyWindow extends JFrame {
     private JTextArea display = new JTextArea("Welcome to PiggyBank Simulator");
     private JRadioButton[] rbuttons = new JRadioButton[5];
     private JButton insertButton = new JButton("Insert a coin");
+    private JButton emptyButton = new JButton("Empty the bank");
     public void init() {
         setSize(500, 300);
         setLocation(200, 100);
@@ -22,7 +24,7 @@ public class MyWindow extends JFrame {
         cp.add(BorderLayout.CENTER, scrollPane);
 
         JPanel bottomPanel = new JPanel();
-        bottomPanel.setLayout(new GridLayout(2, 1));
+        bottomPanel.setLayout(new GridLayout(3, 1));
 
         JPanel radioPanel = new JPanel();
         ButtonGroup radioGroup = new ButtonGroup();
@@ -39,11 +41,14 @@ public class MyWindow extends JFrame {
 
         bottomPanel.add(radioPanel);
         bottomPanel.add(insertButton);
+        bottomPanel.add(emptyButton);
+        emptyButton.setBackground(Color.red);
 
         cp.add(BorderLayout.SOUTH, bottomPanel);
 
         //even listener
         insertButton.addActionListener(new InsertButtonListener(this));
+        emptyButton.addActionListener(new emptyButtonListener(this));
     }
     public JTextArea getDisplay() {
         return display;
