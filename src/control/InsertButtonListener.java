@@ -23,11 +23,15 @@ public class InsertButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         int value = 0;
         if (rbuttons[0].isSelected()) {
-            value = 5;
+            value = 1;
         } else if (rbuttons[1].isSelected()) {
-            value = 10;
+            value = 5;
         } else if (rbuttons[2].isSelected()){
+            value = 10;
+        } else if (rbuttons[3].isSelected()) {
             value = 25;
+        } else if (rbuttons[4].isSelected()) {
+            value = 100;
         }
 
         if (value == 0) {

@@ -8,7 +8,7 @@ import java.awt.*;
 public class MyWindow extends JFrame {
 
     private JTextArea display = new JTextArea("Welcome to PiggyBank Simulator");
-    private JRadioButton[] rbuttons = new JRadioButton[3];
+    private JRadioButton[] rbuttons = new JRadioButton[5];
     private JButton insertButton = new JButton("Insert a coin");
     public void init() {
         setSize(500, 300);
@@ -19,7 +19,7 @@ public class MyWindow extends JFrame {
         JScrollPane scrollPane = new JScrollPane(display,
                 JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
                 JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        cp.add(BorderLayout.CENTER, display);
+        cp.add(BorderLayout.CENTER, scrollPane);
 
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new GridLayout(2, 1));
@@ -31,9 +31,11 @@ public class MyWindow extends JFrame {
             radioPanel.add(rbuttons[i]);
             radioGroup.add(rbuttons[i]);
         }
-        rbuttons[0].setText("5 cents");
-        rbuttons[1].setText("10 cents");
-        rbuttons[2].setText("25 cents");
+        rbuttons[0].setText("1 cent");
+        rbuttons[1].setText("5 cents");
+        rbuttons[2].setText("10 cents");
+        rbuttons[3].setText("25 cents");
+        rbuttons[4].setText("1 dollar");
 
         bottomPanel.add(radioPanel);
         bottomPanel.add(insertButton);
