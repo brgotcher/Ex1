@@ -20,6 +20,17 @@ public class InsertButtonListener implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Button clicked");
+        int value = 0;
+        if (rbuttons[0].isSelected()) {
+            value = 5;
+        } else if (rbuttons[1].isSelected()) {
+            value = 10;
+        } else if (rbuttons[2].isSelected()){
+            value = 25;
+        }
+
+        if (value != 0) {
+            display.setText("Coin " + value + " is selected");
+        }
     }
 }
